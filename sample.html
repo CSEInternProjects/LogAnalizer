@@ -1,0 +1,41 @@
+</html>
+<head>
+<script type="text/javascript">
+function createTable()
+{
+    var num_ports = document.getElementById('ports').value;
+    var num_super = document.getElementById('super').value;
+    var num_rows = document.getElementById('rows').value;
+    var num_cols = document.getElementById('cols').value;
+    var tbody = '';
+    var colStart = num_cols / num_super;
+    for( var i=0; i<num_super; i++){
+        var theader = '<div><table border="1">\n';
+            for($u=1; $u<=num_rows; $u++){
+              tbody += '<tr>';
+                for( var j=0; j<colStart; j++)
+                {
+                tbody += '<td>';
+                tbody += 'Cell ' + i + ',' + j;
+                tbody += '</td>'
+                }
+        tbody += '</tr>\n';
+    }
+    var tfooter = '</table></div>';
+    document.getElementById('wrapper').innerHTML = theader + tbody + tfooter;
+}
+}
+</script>
+</head>
+<body>
+<form name="tablegen">
+<label>Ports: <input type="text" name="ports" id="ports"/></label><br />
+<label>Super Columns: <input type="text" name="super" id="super"/></label><br />
+<label>Rows: <input type="text" name="rows" id="rows"/></label><br />
+<label>Columns: <input type="text" name="cols" id="cols"/></label><br/>
+<input name="generate" type="button" value="Create Table!" onclick='createTable();'/>
+</form>
+
+<div id="wrapper"></div>
+</body>
+</html>

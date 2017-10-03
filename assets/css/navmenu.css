@@ -1,0 +1,104 @@
+html,
+body {
+    color: #565656;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 300;
+    background: purple; /* For browsers that do not support gradients */
+    background: linear-gradient(to bottom right, #9370DB, #FA8072); /* Standard syntax (must be last) */
+}
+
+input,
+input:hover,
+input:active,
+input:focus {
+    text-decoration: none;
+    outline: none;
+}
+input,
+button,
+
+p {
+    margin: 0 0 15px;
+}
+.clear {
+    clear: both;
+}
+
+
+/* scrollup */
+
+.scrollup{
+	width: 30px;
+	height: 30px;
+	border-radius: 15px;
+	opacity: .3;
+	position: fixed;
+	bottom: 20px;
+	right: 25px;
+	color: #fff;
+	cursor: pointer;
+	background-color: #000;
+	z-index: 1000;
+	transition: opacity .5s, background-color .5s;
+	-moz-transition: opacity .5s, background-color .5s;
+	-webkit-transition: opacity .5s, background-color .5s;
+}
+
+.scrollup:hover {
+
+	background: #222;
+	opacity: 1;
+}
+
+.scrollup i {
+	font-size: 13px;
+	position: absolute;
+	opacity: 1;
+	color: #fff;
+	left: 50%;
+	top: 50%;
+	margin-top: -7px;
+	margin-left: -6px;
+	text-decoration: none;
+
+}
+
+.main-div
+{
+	position:absolute;
+	background: purple;
+	width: 15%;
+	height: 94%;
+	top: 8%;
+	left:0%;
+
+}
+
+.main-name,
+.main-name1{
+	color : white;
+  weight : 100px;
+}
+
+.header1
+{
+	position:absolute;
+	width:100%;
+	top:0%;
+	left:0%;
+	height: 8%;
+	background: black;
+}
+
+.header2
+{
+color: white;
+font-weight: 200;
+text-align: center;
+font-size: 30px;
+}
+
+.header2.hover
+{
+color: white;
+}

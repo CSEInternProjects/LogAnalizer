@@ -1,0 +1,241 @@
+<html>
+   <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Logs Analyser</title>
+      <link rel="stylesheet" href="assets/css/navmenu.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet"/>
+      <script src="assets/js/dropzone.js"></script>\
+      <link rel="stylesheet" type="text/css" href="assets/css/demo.css" />
+      <link rel="stylesheet" type="text/css" href="assets/css/component.css" />
+      <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+   </head>
+   <body onload="temptagjs()" id="myDiv1">
+      <div id = "myDiv" style="display:none"><img class="myImageGif" id = "myImage" src = "assets/images/load.gif">
+      </div>
+      <div id="myModal" class="modal">
+         <div id="modal-content" class="modal-content">
+            <button onclick="popupboxclose()" id="close1" class="close">X</button>
+            <div id="mymodal1" class="mymodal1">
+
+            </div>
+            <div class="scrollup" onclick="scrolltoTop()">
+               <a href="#"><i class="fa fa-chevron-up"></i></a>
+            </div>
+         </div>
+      </div>
+      <div class= "header1">
+         <h1 class="header2"> KONY</h1>
+         <h1 class = "header2 header3">Log Analyser</h1>
+      </div>
+      <div class= "main-div">
+         <br>
+         <center>
+            <p class="main-name">Select number of Files</p>
+         </center>
+         <select id="select_key" class="select_key1" onclick="selected_key(); selected_key1();">
+            <option value="0" selected="selected">select value</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+            <option value="4">Four</option>
+            <option value="5">Five</option>
+         </select>
+         <select id="selectmode" class="select_key1 selectmode" onclick="selected_key4(); selected_key1();">
+            <option value="0" selected="selected">select Mode</option>
+            <option value="1">ERROR</option>
+            <option value="2">INFO</option>
+            <option value="3">DEBUG</option>
+            <option value="4">WARNING</option>
+         </select>
+         <div class="container inputfile_1" id="inputfile_1">
+            <div class="content">
+               <div class="box">
+                  <input type="file" name="fileName[]" id="fileName" onchange='openFile1(event)' class="inputfile inputfile-1 inputfile1" data-multiple-caption ="{count} files selected" multiple />
+                  <label for="fileName">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 20 20">
+                        <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
+                     </svg>
+                     <span>MBass File&hellip;</span>
+                  </label>
+               </div>
+            </div>
+         </div>
+         <div class="container inputfile_2" id="inputfile_2">
+            <div class="content">
+               <div class="box">
+                  <input type="file" name="fileName1[]" id="fileName1" onchange='openFile1(event)' class="inputfile inputfile-1 inputfile2" data-multiple-caption ="{count} files selected" multiple />
+                  <label for="fileName1">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 20 20">
+                        <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
+                     </svg>
+                     <span>Accounts File&hellip;</span>
+                  </label>
+               </div>
+            </div>
+         </div>
+         <div class="container inputfile_3" id="inputfile_3">
+            <div class="content">
+               <div class="box">
+                  <input type="file" name="fileName2[]" id="fileName2" onchange='openFile1(event)' class="inputfile inputfile-1 inputfile3" data-multiple-caption ="{count} files selected" multiple />
+                  <label for="fileName2">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 20 20">
+                        <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
+                     </svg>
+                     <span>Auth File&hellip;</span>
+                  </label>
+               </div>
+            </div>
+         </div>
+         <div class="container inputfile_4" id="inputfile_4">
+            <div class="content">
+               <div class="box">
+                  <input type="file" name="fileName3[]" id="fileName3" onchange='openFile1(event)' class="inputfile inputfile-1 inputfile4" data-multiple-caption ="{count} files selected" multiple />
+                  <label for="fileName3">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 20 20">
+                        <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
+                     </svg>
+                     <span>Middleware file&hellip;</span>
+                  </label>
+               </div>
+            </div>
+         </div>
+         <div class="container inputfile_5" id="inputfile_5">
+            <div class="content">
+               <div class="box">
+                  <input type="file" name="fileName4[]" id="fileName4" onchange='openFile1(event)' class="inputfile inputfile-1 inputfile5" data-multiple-caption ="{count} files selected" multiple />
+                  <label for="fileName4">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="10" height="17" viewBox="0 0 20 20">
+                        <path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/>
+                     </svg>
+                     <span>Choose file 5&hellip;</span>
+                  </label>
+               </div>
+            </div>
+         </div>
+         <center>
+            <p id="main-name1" class="main-name1">Select time</p>
+         </center>
+         <select id="select_key2" class="select_key2" onclick="onEnterTime(value)">
+            <option value="-1" selected="selected">select value</option>
+            <option value="0">Latest Error</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">Entire File</option>
+         </select>
+         <center>
+            <div class="container1" id="container1">
+               <button class = "box1" onClick="window.location.reload();">Refresh</button>
+            </div>
+         </center>
+         <br>
+      </div>
+      <div class="searchbar1">
+         <input id="searchbar" class="searchbar" type="text"  placeholder="Search for Request ID.." onkeypress="enterpressalert(event, this)" />
+         <select id="select_keytype" class="select_keytype inlinesearch" onclick="selected_key2()" >
+            <option value="0" selected>select what to display</option>
+            <option value="1">Display Both</option>
+            <option value="2">Display Table</option>
+            <option value="3">Display Data</option>
+         </select>
+      </div>
+      <div class="table_fill" id="table_fill">
+         <!-- <table class="tabledata" onload="tableshow()">
+            <tr id="tr1">
+              <th id="tebleid td00" class="columrow1 tableheader tc1 trr1">Sl. No.</th>
+              <th id="tebleid td01" class="tableheader tc1 trr2">First File</th>
+              <th id="tebleid td02" class="tableheader tc1 trr3">Second File</th>
+              <th id="tebleid td03" class="tableheader tc1 trr4">Third File</th>
+              <th id="tebleid td04" class="tableheader tc1 trr5">Fourth File</th>
+              <th id="tebleid td05" class="tableheader tc1 trr6">Fifth File</th>
+
+            </tr>
+            <tr id="tr2">
+              <td id="tebleid td10" class="column1 columrow1 tc2 trr1">1</td>
+              <td id="tebleid td11" class="column1 tc2 trr2">None</td>
+              <td id="tebleid td12" class="column1 tc2 trr3">None</td>
+              <td id="tebleid td13" class="column1 tc2 trr4">None</td>
+              <td id="tebleid td14" class="column1 tc2 trr5">None</td>
+              <td id="tebleid td15" class="column1 tc2 trr6">None</td>
+            </tr>
+            <tr id="tr3">
+              <td id="tebleid td20" class="column1 columrow1 tc3 trr1">2</td>
+              <td id="tebleid td21" class="column1 tc3 trr2">None</td>
+              <td id="tebleid td22" class="column1 tc3 trr3">None</td>
+              <td id="tebleid td23" class="column1 tc3 trr4">None</td>
+              <td id="tebleid td24" class="column1 tc3 trr5">None</td>
+              <td id="tebleid td25" class="column1 tc3 trr6">None</td>
+            </tr>
+            <tr id="tr4">
+              <td id="tebleid td30" class="column1 columrow1 tc4 trr1">3</td>
+              <td id="tebleid td31" class="column1 tc4 trr2">None</td>
+              <td id="tebleid td32" class="column1 tc4 trr3">None</td>
+              <td id="tebleid td33" class="column1 tc4 trr4">None</td>
+              <td id="tebleid td34" class="column1 tc4 trr5">None</td>
+              <td id="tebleid td35" class="column1 tc4 trr6">None</td>
+            </tr>
+            <tr id="tr5">
+              <td id="tebleid td40" class="column1 columrow1 tc5 trr1">4</td>
+              <td id="tebleid td41" class="column1 tc5 trr2">None</td>
+              <td id="tebleid td42" class="column1 tc5 trr3">None</td>
+              <td id="tebleid td43" class="column1 tc5 trr4">None</td>
+              <td id="tebleid td44" class="column1 tc5 trr5">None</td>
+              <td id="tebleid td45" class="column1 tc5 trr6">None</td>
+            </tr>
+            <tr id="tr6" class="tc6" >
+              <td id="tebleid td50" class="column1 columrow1 trr1">5</td>
+              <td id="tebleid td51" class="column1  trr2">None</td>
+              <td id="tebleid td52" class="column1  trr3">None</td>
+              <td id="tebleid td53" class="column1  trr4">None</td>
+              <td id="tebleid td54" class="column1  trr5">None</td>
+              <td id="tebleid td55" class="column1  trr6">None</td>
+            </tr>
+            </table> -->
+      </div>
+      <div id="temptag" class="temptag">
+        <h2><center>Time Based Logs</center></h2>
+         <h3 id="one"> </h3>
+         <div id="MBASS">
+         </div>
+         <h3 id="two"> </h3>
+         <div id="ACC">
+         </div>
+         <h3 id="three"> </h3>
+         <div id="AUTH">
+         </div>
+         <h3 id="mid"> </h3>
+         <div id="MID">
+         </div>
+      </div>
+      <br>
+      <div id="searchid" class="temptag searchshow">
+        <h2><center>Search Result</center></h2>
+
+      </div>
+      <div class="scrollup" onclick="scrolltoTop()">
+         <a href="#"><i class="fa fa-chevron-up"></i></a>
+      </div>
+      <script src="assets/js/custom-file-input.js"></script>
+      <script src="assets/js/main.js"></script>
+   </body>
+</html>
